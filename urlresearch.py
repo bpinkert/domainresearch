@@ -3,6 +3,9 @@ import whois
 import argparse
 
 def registrar(dom):
+	"""
+	Function that takes in a domain name and returns information
+	"""
 	d = whois.whois(str(dom))
 	domain = str(d.domain_name)
 	transferstat = str(d.status)
@@ -31,6 +34,9 @@ def registrar(dom):
 	return domain, transferstat, cdate, update, registrar, refurl, whoserver, dnssec, address, regcity, regstate, regzip, expdate, ns1, ns2, ns3, org, elist
 
 def cleanreg(r):
+	"""
+	Takes the output from the registrar function and cleans it, prints it
+	"""
 	print "Domain Name: %s\n" % r[0]
 	print "Transfer Status: %s\n" % r[1].split(',')[0][3:-1]
 	print "Creation Date: %s\n" % r[2][1:-2]
@@ -55,7 +61,7 @@ def cleanreg(r):
 def main():
     parser = argparse.ArgumentParser(add_help = True, prog='python script to fetch whois information for domain', description = "Python script to fetch whois information for domain.", usage='Use like so: python urlresearch.py --url example.com')
     parser.add_argument('--url', action='store', dest='url', help='example.com')
-    parser.add_argument('-debug', action='store', dest='debug', help='Turn DEBUG output ON')
+    parser.add_argument('--debug', action='store', dest='debug', help='Turn DEBUG output ON')
     options = parser.parse_args()
     # if len(options.url) != 1:
     #     parser.print_help()

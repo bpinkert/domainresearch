@@ -50,8 +50,8 @@ def cleanreg(r):
 		pass
 	print "Date Updated: %s\n" % r[3]
 	print "Registrar Name: %s\n" % r[4]
-	print "Referral URL: %s\n" % r[5]
-	print "Whois Server: %s\n" % r[6]
+	print "Registrar URL: %s\n" % r[5]
+	print "Registrar Whois Server: %s\n" % r[6]
 	print "DNSSEC: %s\n" % r[7]
 	# if r[8] != None:
 	# 	print "Registered Organization: %s\n" % r[8].split(',')[1][3:-2]

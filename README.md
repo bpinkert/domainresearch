@@ -2,13 +2,13 @@
 
 This is a script designed to take in a domain name and spit out whois information
 
-Install requirements first: 	
+##Install requirements first: 	
 
 ```
 pip install -r requirements.txt
 ```
 
-Use script like this:
+##Use script like this:
 
 ```
 python domainresearch.py --url example.com

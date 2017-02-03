@@ -68,7 +68,7 @@ def cleanreg(r):
 		print "Nameserver 3: %s\n" % r[15][0:-1]
 	else: 
 		pass
-	print "Whois Organization: %s\n" % r[16]
+	print "Organization: %s\n" % r[16]
 	print "Email 1: %s\n" % r[17][0][3:-1]
 	print "Email 2: %s\n" % r[17][1][3:-2]
 

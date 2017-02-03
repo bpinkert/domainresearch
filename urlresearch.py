@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import whois
+import argparse
 
 def registrar(dom):
 	d = whois.whois(str(dom))
@@ -51,4 +52,17 @@ def cleanreg(r):
 	print "Email 1: %s\n" % r[17][0][3:-1]
 	print "Email 2: %s\n" % r[17][1][3:-2]
 
-registrar('savantdigital.net')
+def main():
+    parser = argparse.ArgumentParser(add_help = True, prog='python script to fetch whois information for domain', description = "Python script to fetch whois information for domain.", usage='Use like so: python urlresearch.py --url example.com')
+    parser.add_argument('--url', action='store', dest='url', help='example.com')
+    parser.add_argument('-debug', action='store', dest='debug', help='Turn DEBUG output ON')
+    options = parser.parse_args()
+    # if len(options.url) != 1:
+    #     parser.print_help()
+    domname = options.url
+    r = registrar(domname)
+    cleaned = cleanreg(r)
+
+if __name__ == '__main__':
+    main()
+    
